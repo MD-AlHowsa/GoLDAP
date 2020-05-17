@@ -1,6 +1,6 @@
 # GoLDAP
 
-GoLDAP is a **Gophish** addon that retrieves users from your **active directory** via **LDAP** protocol and then import them into a predefined group in your Gophish . By defualt LDAP will not return more than 1000 entries as a result for your query. However, GoLDAP uses LDAP paging to retrieve as many users as your container has. If you have ideas to improve the script, do not hesitate to contact me on:  
+GoLDAP is a **[Gophish](https://getgophish.com/)** addon that retrieves users from your **active directory** via **LDAP** protocol and then import them into a predefined group in your Gophish . By defualt LDAP will not return more than 1000 entries as a result for your query. However, GoLDAP uses LDAP paging to retrieve as many users as your container has. If you have ideas to improve the script, do not hesitate to contact me on:  
 moh2006s@hotmail.com
 
 
