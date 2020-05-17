@@ -1,6 +1,10 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
 '''
-Name : Mohammed AlHowsa
+Name: go LDAP
+Author : Mohammed AlHowsa
+Brief: An addon for gophish to import users via LDAP
 Email : moh2006s@hotmail.com
 linkedin : https://www.linkedin.com/in/howsa/
 Github : https://github.com/md-howsa
