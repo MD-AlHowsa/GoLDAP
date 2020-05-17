@@ -83,7 +83,8 @@ If you want to modify an existing group, put its ID int this variable as integer
 > specific group, you can create a cron job if you using Linux or
 > schedule task if using Windows. 
 
-
  
+ Thanks to this reference :  
+ `https://medium.com/@alpolishchuk/pagination-of-ldap-search-results-with-python-ldap-845de60b90d2`
 
 
