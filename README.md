@@ -22,9 +22,14 @@ moh2006s@hotmail.com
 
 If your LDAP port is not the defualt one "389", spesicy the port after the IP addreess as follows:  ldap://ip_address:port
 
-Active directory credential
+Active directory credential.
+
 `us =`  'username'
 `pw =` 'password'
+
+
+`base_dn =`  'Location of the container' 
+`base_dn =`  'Location of the container' 
 
 `base_dn =`  'Location of the container' 
 
