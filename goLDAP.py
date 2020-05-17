@@ -21,10 +21,7 @@ us = 'us'
 pw = 'pw' 
 
 base_dn =  'ou=Users,,dc=example,dc=com'
-filter = 'objectClass=user'
-attrs = ['mail','givenname','sn','position'] 
 col_names = 'Email, First Name, Last Name,position'
-csv_output_file = 'users.csv' 
 
 gophish_server = 'localhost'
 gophish_port = '3333'
@@ -48,7 +45,9 @@ from ldap.controls import SimplePagedResultsControl
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 
-
+filter = 'objectClass=user'
+attrs = ['mail','givenname','sn','position'] 
+csv_output_file = 'users.csv' 
 
 #============= Ldap Connection & search  =======================
 def ldap_search(ldap_server,us,pw,base_dn,attrs,filter):
