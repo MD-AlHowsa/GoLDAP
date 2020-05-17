@@ -23,15 +23,11 @@ moh2006s@hotmail.com
 If your LDAP port is not the defualt one "389", spesicy the port after the IP addreess as follows:  ldap://ip_address:port
 
 Active directory credential.
+`us =`  'username'.
+`pw =` 'password'.
 
-`us =`  'username'
-`pw =` 'password'
 
-
-`base_dn =`  'Location of the container' 
-`base_dn =`  'Location of the container' 
-
-`base_dn =`  'Location of the container' 
+`base_dn =`  'Location of the container'.
 
 >  The Base DN setting specifies the root for searches in the Active
 > Directory, e.g, if your domain name is "example.local". Convert it
@@ -46,12 +42,12 @@ Active directory credential.
 
  Unfortunately, we cannot control the order of the columns in LDAP, SO, based on my testing it usually comes in this order, change the order if yous is different.
 
-Gophish Configuration
-`gophish_server =` 'localhost'
-`gophish_port =` '3333'
-`gophish_api_key =` 'api_key'
+Gophish Configuration.
+`gophish_server =` 'localhost'.
+`gophish_port =` '3333'.
+`gophish_api_key =` 'api_key'.
 
-`group_name =` "gophish _group_name"
+`group_name =` "gophish _group_name".
 
 Put the name of the group you want to create or  modify. 
  
@@ -60,7 +56,7 @@ Put the name of the group you want to create or  modify.
 > otherwise, it will modify the name of the group. Basically, the only 
 > identifier for a group is its ID not its name.
 
-`update_group =`  
+`update_group = 0`  
 
 If you want to modify an existing group, put its ID int this variable as integer, otherwise put 0 to create a new group with the name specified in the "group_name" variable.
 
