@@ -77,7 +77,8 @@ If you want to modify an existing group, put its ID int this variable as integer
 
 # Usage
 
-`Python goLDAP.py`  
+1. `pip install -r requirements.txt`
+2. `Python goLDAP.py`  
 
 > To make sure new users in active directory are always imported in a
 > specific group, you can create a cron job if you using Linux or
