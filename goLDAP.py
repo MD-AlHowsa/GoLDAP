@@ -63,7 +63,7 @@ def ldap_search(ldap_server,us,pw,base_dn,attrs,filter):
         pages += 1
         rtype, rdata, rmsgid, serverctrls = connect.result3(response)
         result.extend(rdata)
-        print len(result)
+        print(len(result))
         controls = [control for control in serverctrls
                     if control.controlType == SimplePagedResultsControl.controlType]
         if not controls:
@@ -87,13 +87,13 @@ def gophish_format(search_result):
             temp_s = i[1].get('sn')
             temp_p = i[1].get('position')
             if temp_m:
-                i[1]['mail'] = temp_m[0]
+                i[1]['mail'] = temp_m[0].decode('utf-8')
                 if temp_g:
-                        i[1]['givenName'] = temp_g[0]
+                        i[1]['givenName'] = temp_g[0].decode('utf-8')
                         if temp_s:
-                                i[1]['sn'] = temp_s[0]
+                                i[1]['sn'] = temp_s[0].decode('utf-8')
                 if temp_p:
-                    i[1]['position']
+                    i[1]['position'] = temp_p[0].decode('utf-8')
         return search_result
 
 
@@ -113,9 +113,9 @@ def upload_csv(group_name,gophish_api_key, csv_output_file,update_group):
         fileObj = {'file': open(csv_output_file,'rb')}
         response_toJson = requests.post("https://"+gophish_server+":"+gophish_port+"/api/import/group?api_key="+gophish_api_key,files=fileObj,verify=False)
         if response_toJson.status_code == 200:
-                print "Step 1: CSV file has seccfully transformed to Json format"
+                print("Step 1: CSV file has seccfully transformed to Json format")
         else:
-                print "Step 1: Error, Status Code "+str(response_toJson.status_code)
+                print("Step 1: Error, Status Code "+str(response_toJson.status_code))
         group = {}
         group['name'] = group_name
         group['targets'] = response_toJson.json()
@@ -125,21 +125,21 @@ def upload_csv(group_name,gophish_api_key, csv_output_file,update_group):
         headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 
         if update_group:
-                print "Trying to update group with ID "+str(update_group)
+                print("Trying to update group with ID "+str(update_group))
                 response_toUpload = requests.put("https://"+gophish_server+":"+gophish_port+"/api/groups/"+str(update_group)+"?api_key="+gophish_api_key,data=json_group,verify=False)
         else:
-                print "Trying to create new group with name "+group_name
+                print("Trying to create new group with name "+group_name)
                 response_toUpload = requests.post("https://"+gophish_server+":"+gophish_port+"/api/groups/?api_key="+gophish_api_key,data=json_group,headers=headers,verify=False)
 
         if response_toUpload.status_code == 201:
-                print "Step 2: Done, total number of users is "+str(len(response_toUpload.json()['targets']))
+                print("Step 2: Done, total number of users is "+str(len(response_toUpload.json()['targets'])))
         elif response_toUpload.status_code == 409 :
-                print "Step 2: Group is Already created,put the group is in the configuration section of the code instead of 0"
-                print "Status code = "+str(response_toUpload.status_code)
+                print("Step 2: Group is Already created,put the group ID in the configuration section of the code instead of 0")
+                print("Status code = "+str(response_toUpload.status_code))
         elif response_toUpload.status_code == 200:
-                print "Step 2: Done, total number of users is"+str(len(response_toUpload.json()['targets']))
+                print("Step 2: Done, total number of users is "+str(len(response_toUpload.json()['targets'])))
         else:
-                print "Step 2: Error, Status Code "+str(response_toUpload.status_code)
+                print("Step 2: Error, Status Code "+str(response_toUpload.status_code))
 
 def main():
         global ldap_server
