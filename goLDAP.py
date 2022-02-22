@@ -134,7 +134,7 @@ def upload_csv(group_name,gophish_api_key, csv_output_file,update_group):
         if response_toUpload.status_code == 201:
                 print("Step 2: Done, total number of users is "+str(len(response_toUpload.json()['targets'])))
         elif response_toUpload.status_code == 409 :
-                print("Step 2: Group is Already created,put the group is in the configuration section of the code instead of 0")
+                print("Step 2: Group is Already created,put the group ID in the configuration section of the code instead of 0")
                 print("Status code = "+str(response_toUpload.status_code))
         elif response_toUpload.status_code == 200:
                 print("Step 2: Done, total number of users is "+str(len(response_toUpload.json()['targets'])))
