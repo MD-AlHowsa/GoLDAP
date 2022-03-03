@@ -1,0 +1,27 @@
+{
+  "ldap": {
+    "server": "ldaps://ldap.example.com",
+    "username": "LDAP BIND USERNAME",
+    "password": "LDAP BIND PASSWORD",
+    "attrs": [
+      "mail",
+      "givenname",
+      "sn",
+      "title"
+    ],
+    "base_dn": "OU=Accounts,DC=example,DC=com",
+    "filter": "(objectClass=person)"
+  },
+  "ldap_to_gophish_mapping": {
+    "first_name": "givenName",
+    "last_name": "sn",
+    "email": "mail",
+    "position": "title"
+  },
+  "gophish": {
+    "server": "localhost",
+    "port": "3333",
+    "api_key": "GOPHISH API KEY",
+    "group_name": "GROUP NAME IN GOPHISH",
+  }
+}
