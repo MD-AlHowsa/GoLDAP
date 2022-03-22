@@ -5,7 +5,7 @@
 Name: goLDAP
 Author : Mohammed AlHowsa
 Brief: An addon for gophish to import users via LDAP
-Github : https://github.com/md-howsa
+Github : https://github.com/md-alhowsa
 '''
 
 
